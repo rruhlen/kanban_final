@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').config();
 
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -21,8 +22,8 @@ const socket = io.on('connection', function(socket) {
 // conn.authenticate({ username: process.env.SF_USERNAME,
 //   password: process.env.SF_PASSWORD }, function(err, oauth) {
 
-  conn.authenticate({ username: 'process.env.SF_USERNAME',
-       password: 'process.env.SF_PASSWORD' }, function(err, oauth) {
+  conn.authenticate({ username: process.env.SF_USERNAME,
+       password: process.env.SF_PASSWORD }, function(err, oauth) {
 
   if(err) return console.log(err);
 
